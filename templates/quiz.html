@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math Quiz</title>
+</head>
+<body>
+    <h1>Question {{ question_num }} of {{ total }}</h1>
+    <h2>{{ question }}</h2>
+    <form method="POST">
+        <input type="number" name="answer" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

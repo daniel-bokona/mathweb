@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Adventure! 🎮</h1>
+
+        <div id="settings">
+            <label>   Choose Operation:</label>
+            <select id="operation">
+                <option value="addition">➕ Addition</option>
+                <option value="subtraction">➖ subtraction </option>
+                <option value="multiplication">✖️ multiplication </option>
+                <option value="division">➗ division </option>
+            </select>
+
+            <label>Choose Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">😊 Easy</option>
+                <option value="medium">🤔 Medium</option>
+                <option value="hard">🤯 Hard</option>
+            </select>
+
+            <label>Time per Question (seconds):</label>
+            <input type="range" min="10" max="60" step="5" id="timePerQuestion" value="20">
+            <span id="timeDisplay">20 seconds</span>
+
+            <label>Number of Questions:</label>
+            <input type="range" min="5" max="20" step="1" id="numQuestions" value="5">
+            <span id="questionDisplay">5 </span>
+
+            <button id="startButton">Start Game 🎮</button>
+        </div>
+
+        <div id="quiz" class="hidden">
+            <h2 id="question"></h2>
+            <input type="number" id="answer" placeholder="Your Answer">
+            <button id="checkButton">Check Answer</button>
+            <p id="feedback"></p>
+            <p id="timer">⏳ Time Left: <span id="timeLeft">20</span> seconds</p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="playAgain">Play Again 🔄</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='style/script.js') }}"></script>
+</body>
+</html>
